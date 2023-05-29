@@ -1,3 +1,5 @@
+**About Framework**
+
 Test Automation framework is created using Playwright with TypeScript.
 
 Design pattern which is used in this framework is Page Object Model.
@@ -16,7 +18,7 @@ It is possible to enable & disable the browsers from the playwright.config.ts fi
 
 All the tests are independent from each other.
 
-**How to setup:-**
+**How to setup**
 
 Install Node version 14.17.3
 
