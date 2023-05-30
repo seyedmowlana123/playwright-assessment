@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test tests/testingLinks.spec.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -11,6 +13,6 @@
     "@playwright/test": "^1.34.3"
   },
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "playwright": "^1.34.3"
   }
 }
