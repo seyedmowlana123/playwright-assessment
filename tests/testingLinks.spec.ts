@@ -49,7 +49,7 @@ test.describe("Test with 5 different links", () => {
     const onFormAuthenticationPage = new formAuthenticationPage(page);
 
     await navigateTo.navigateToPage("Form Authentication");
-    await onFormAuthenticationPage.userNamePassword(
+    await onFormAuthenticationPage.loginToApp(
       credentials.username,
       credentials.password
     );

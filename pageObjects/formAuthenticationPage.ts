@@ -16,7 +16,7 @@ constructor(page:Page){
     this.loginButton = page.getByRole('button', { name: ' Login' });
     this.successMessage = page.locator('#flash');
 }
-   async userNamePassword(userName, password){
+   async loginToApp(userName, password){
 
     await this.userNameFiled.click();
     await this.userNameFiled.fill(userName);
