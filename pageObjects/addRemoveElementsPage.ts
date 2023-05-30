@@ -1,25 +1,32 @@
 /*
 @copyright - Seyed Mowlana
 @Description - Page class for Add/Remove Elements page.
-@Date - 24/05/2023
-@Version - 1.0
+@Date - 30/05/2023
+@Version - 2.0
 */
-import { test, expect, Page } from '@playwright/test';
+import { expect, Page, Locator } from '@playwright/test';
 
 export class addRemoveElementsPage{
 
 readonly page: Page;
+readonly addButton: Locator;
+readonly deleteButton: Locator;
 
 constructor(page:Page){
     this.page = page;
+    this.addButton = page.getByRole('button', { name: 'Add Element' });
+    this.deleteButton = page.getByRole('button', { name: 'Delete' });
 }
-   async addRemove(){
+   async addElement(){
 
-    await this.page.getByRole('button', { name: 'Add Element' }).click();
+    await this.addButton.click();
     //Assertion to check Delete button is visible
-    await expect(this.page.getByRole('button', { name: 'Delete' })).toBeVisible();
-    await this.page.getByRole('button', { name: 'Delete' }).click();
-    //Assertion to check Delete button is removed
-    await expect(this.page.getByRole('button', { name: 'Delete' })).toBeHidden();
+    await expect(this.addButton).toBeVisible();
+    }
+
+    async removeElement(){
+        await this.deleteButton.click();
+        //Assertion to check Delete button is removed
+        await expect(this.deleteButton).toBeHidden();
     }
 }

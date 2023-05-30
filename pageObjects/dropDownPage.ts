@@ -1,16 +1,17 @@
-import { test, expect, Page } from '@playwright/test';
+import { expect, Page, Locator } from "@playwright/test";
 
-export class dropDownPage{
+export class dropDownPage {
+  readonly page: Page;
+  readonly dropDown: Locator;
 
-readonly page: Page;
-
-constructor(page:Page){
+  constructor(page: Page) {
     this.page = page;
+    this.dropDown = page.locator("#dropdown");
+  }
+  async dropDownOperations() {
+    await this.dropDown.selectOption("1");
+    await expect(this.page.locator("#dropdown")).toContainText("Option 1");
+    await this.dropDown.selectOption("2");
+    await expect(this.page.locator("#dropdown")).toContainText("Option 2");
+  }
 }
-   async dropDownOperations(){
-    
-    await this.page.locator('#dropdown').selectOption('1');
-    await this.page.locator('#dropdown').selectOption('2');
-    await expect(this.page.locator('#dropdown')).toContainText('Option 2');
-    }
- }

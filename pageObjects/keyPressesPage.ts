@@ -1,18 +1,22 @@
-import { test, expect, Page } from '@playwright/test';
+import { expect, Page, Locator } from '@playwright/test';
 
 export class keyPressesPage{
 
 readonly page: Page;
+readonly textBox: Locator;
+readonly resultDisplay: Locator;
 
 constructor(page:Page){
     this.page = page;
+    this.textBox = page.locator('#target');
+    this.resultDisplay = page.locator('#result');
 }
    async pressTab(){
-    await this.page.locator('#target').click();
+    await this.textBox.click();
     
-    await this.page.locator('#target').press('Tab');
+    await this.textBox.press('Tab');
     //Assertion
-    await expect(this.page.locator('#result')).toContainText('You entered: TAB');
+    await expect(this.resultDisplay).toContainText('You entered: TAB');
     }
 }
 

@@ -1,10 +1,10 @@
 /*
 @copyright - Seyed Mowlana
 @Description - Page class is to navigate across the application.
-@Date - 24/05/2023
-@Version - 1.0
+@Date - 30/05/2023
+@Version - 2.0
 */
-import { test, expect, Page } from '@playwright/test';
+import { Page } from '@playwright/test';
 
 export class navigationPage{
 
@@ -12,7 +12,6 @@ export class navigationPage{
 
  constructor(page:Page){
     this.page = page;
-
  }
 //To navigate across the application
  async navigateToPage(pageName){
