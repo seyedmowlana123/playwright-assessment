@@ -9,11 +9,15 @@ constructor(page:Page){
     this.page = page;
     this.firstCheckBox = page.getByRole('checkbox').first();
 }
-   async checkBoxOperations(){
+   async checkCheckBox(){
     await this.firstCheckBox.check();
-    //Assertion to verify the first checkbox is checked
-    await expect(this.page.getByRole('checkbox').first()).toBeChecked();
-
-    await this.firstCheckBox.uncheck();
     }
+
+    async unCheckCheckBox(){
+        await this.firstCheckBox.uncheck();
+    }
+
+    async isCheckBoxChecked(): Promise<boolean> {
+        return await this.firstCheckBox.isChecked();
+      }
  }

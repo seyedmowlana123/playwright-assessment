@@ -9,6 +9,7 @@ require('dotenv').config();
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+require('dotenv').config();
 
 export default defineConfig({
   testDir: "./tests",
@@ -44,15 +45,23 @@ export default defineConfig({
     },
 
     // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'],
-    //   headless:false,
-    // },
+    //   name: "firefox",
+    //   use: {
+    //     browserName: "firefox",
+    //     headless: false,
+    //     screenshot: "on",
+    //     video: "on",
+    //   },
     // },
 
     // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
+    //   name: "webkit",
+    //   use: {
+    //     browserName: "webkit",
+    //     headless: false,
+    //     screenshot: "on",
+    //     video: "on",
+    //   },
     // },
 
     /* Test against mobile viewports. */

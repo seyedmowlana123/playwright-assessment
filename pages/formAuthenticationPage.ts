@@ -1,5 +1,5 @@
 
-import { expect, Locator, Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 
 export class formAuthenticationPage{
 
@@ -7,7 +7,7 @@ readonly page: Page;
 readonly userNameFiled: Locator;
 readonly passWordField: Locator;
 readonly loginButton: Locator;
-readonly successMessage: Locator;
+readonly successMessage;
 
 constructor(page:Page){
     this.page = page;
@@ -23,8 +23,14 @@ constructor(page:Page){
     await this.passWordField.click();
     await this.passWordField.fill(password);
     await this.loginButton.click();
-    //Assertion for successful Login
-    await expect(this.successMessage).toContainText(' You logged into a secure area! ');
     }
- }
 
+    async getSuccessMessage(){
+
+        let successResponse = await this.successMessage.textContent();
+        successResponse = successResponse.trim();
+        let stringWithoutSpaces = successResponse.slice(0,-1);
+        stringWithoutSpaces = stringWithoutSpaces.trim();
+        return stringWithoutSpaces;
+    }   
+ }
