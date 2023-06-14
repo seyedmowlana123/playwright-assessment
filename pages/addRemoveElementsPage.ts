@@ -23,11 +23,11 @@ export class addRemoveElementsPage {
   async removeElement() {
     await this.deleteButton.click();
   }
-
+  //Verification
   async isButtonVisible(): Promise<boolean> {
     return await this.addButton.isVisible();
   }
-
+  //Verification
   async isButtonHidden(): Promise<boolean> {
     return await this.deleteButton.isHidden();
   }

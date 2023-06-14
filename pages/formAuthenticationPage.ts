@@ -28,6 +28,7 @@ constructor(page:Page){
     async getSuccessMessage(){
 
         let successResponse = await this.successMessage.textContent();
+        //Trim the message to get only the content. It returns with the cross (X).
         successResponse = successResponse.trim();
         let stringWithoutSpaces = successResponse.slice(0,-1);
         stringWithoutSpaces = stringWithoutSpaces.trim();

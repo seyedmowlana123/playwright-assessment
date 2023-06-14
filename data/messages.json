@@ -1,3 +1,5 @@
 {
-    "ExpSuccessMessage":"You logged into a secure area!"
+    "ExpSuccessMessage":"You logged into a secure area!",
+    "ExpTabMessage":"You entered: TAB",
+    "ErrorMessage":"BASE_URL is not defined in the .env file."
 }

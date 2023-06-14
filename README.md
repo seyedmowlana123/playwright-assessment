@@ -4,13 +4,15 @@
 
 * Design pattern which is used in this framework is Page Object Model.
 
-* All the pages are listed in the pageObjects folder.
+* All the pages are listed in the pages folder.
 
-* testingLinks.spec.ts test call will call all the respective page classes for the step by step test execution with proper assertions.
+* testingLinks.spec.ts test class will call all the respective page classes for the step by step test execution with proper assertions.
 
-* URL is stored in the playwright.config.ts file & it is called in the before each method in the test class. Therefore it'll execute before every test method.
+* URL is stored in the .env file & it is called in the before each method in the test class. Therefore it'll execute before every test method.
 
-* User credentials are stored in creds.json file which is inside the data folder for security reasons.
+* User credentials are also stored in .env file for security reasons.
+
+* 2 json files are created to store data & it is called in test class to avoid hard coding the data.
 
 * navigationPage is written to navigate throughout the application by clicking the link.
 
