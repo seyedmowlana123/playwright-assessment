@@ -20,7 +20,7 @@
 
 * Tried to achieve maximum code re-usability.
 
-* It is possible to enable & disable the browsers from the playwright.config.ts file.
+* All the tests will run in headless mode in 3 browsers Chromium, Firefox & Webkit. Browsers are configurable from the playwright.config.ts file in projects section.
 
 * All the tests are independent from each other.
 
@@ -34,9 +34,7 @@
 
 * Open the project folder from visual studio code.
 
-* To install Playwright, type following command in the terminal "npm init playwright".
-
-* Choose TypeScript.
+* To install all the dependencies, type following command in the terminal "npm i".
 
 * To run the test, type following command in the terminal - "npm test"
 

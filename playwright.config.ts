@@ -38,31 +38,31 @@ export default defineConfig({
       name: "chromium",
       use: {
         browserName: "chromium",
-        headless: false,
+        headless: true,
         screenshot: "on",
         video: "on",
       },
     },
 
-    // {
-    //   name: "firefox",
-    //   use: {
-    //     browserName: "firefox",
-    //     headless: false,
-    //     screenshot: "on",
-    //     video: "on",
-    //   },
-    // },
+    {
+      name: "firefox",
+      use: {
+        browserName: "firefox",
+        headless: true,
+        screenshot: "on",
+        video: "on",
+      },
+    },
 
-    // {
-    //   name: "webkit",
-    //   use: {
-    //     browserName: "webkit",
-    //     headless: false,
-    //     screenshot: "on",
-    //     video: "on",
-    //   },
-    // },
+    {
+      name: "webkit",
+      use: {
+        browserName: "webkit",
+        headless: true,
+        screenshot: "on",
+        video: "on",
+      },
+    },
 
     /* Test against mobile viewports. */
     // {
